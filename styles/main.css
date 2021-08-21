@@ -1,0 +1,55 @@
+*{
+    box-sizing: border-box;
+}
+
+body{
+    font-family: "Open Sans",sans-serif;
+    font-size: 18px;
+}
+
+.container{
+    margin: 20px auto;
+    width: 1200px;
+}
+
+.container .color-switcher{
+    list-style: none;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.container .color-switcher li{
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+    display: inline-block;
+
+}
+
+
+.container .color-switcher li:nth-child(1){
+    background: #c0392b;
+}
+
+.container .color-switcher li:nth-child(2){
+    background: #16a085 ;
+}
+
+.container .color-switcher li:nth-child(3){
+    background: #8e44ad;
+}
+
+.container .color-switcher li:nth-child(4){
+    background: #2c3e50;
+}
+
+.container h3{
+    color: #c0392b;
+}
+
+.container div{
+    background: #c0392b;
+    padding: 20px;
+    color: #fff;
+    
+}

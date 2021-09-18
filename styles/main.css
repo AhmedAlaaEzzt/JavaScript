@@ -51,5 +51,37 @@ body{
     background: #c0392b;
     padding: 20px;
     color: #fff;
-    
+}
+
+
+.red .container h3{
+    color: #c0392b;
+}
+
+.red .container div{
+    background: #c0392b;
+}
+
+.green .container h3{
+    color: #16a085;
+}
+
+.green .container div{
+    background: #16a085;
+}
+
+.purple .container h3{
+    color: #8e44ad;
+}
+
+.purple .container div{
+    background: #8e44ad;
+}
+
+.black .container h3{
+    color: #2c3e50;
+}
+
+.black .container div{
+    background: #2c3e50;
 }

@@ -19,4 +19,4 @@ var array2 = [
   ]
 ];
 
-let animals = ["cat", "elephant" ,"bee", "deer"],
+let animals = ["cat", "elephant" ,"bee", "deer"];

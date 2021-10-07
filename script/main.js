@@ -1,22 +1,6 @@
-let colors = ["red", "blue", "yellow", "black", "white"];
-let ids = [100, 200, 300, 400];
-let cars = [
-  { id: 123, color: "red" },
-  { id: 456, color: "blue" },
-  { id: 789, color: "red" }
-];
+const array = [1, 2, 10, 16];
 
-let list = [
-	["tiger", "cat", "bear", "bird"]
-];
+const double = [];
+array.forEach(num => double.push(num *2));
 
-var array2 = [
-  "Banana", 
-  [ 
-    "Apples", 
-    ["Oranges"], 
-    "Blueberries"
-  ]
-];
-
-let animals = ["cat", "elephant" ,"bee", "deer"];
+console.log(double);

@@ -1,8 +1,27 @@
-const array = [1, 2, 3, 4];
+const users = [
+	{
+		username: "john",
+		team: "red",
+		score: 5,
+		items: ["ball", "book", "pen"]
+	},
+	{
+		username: "becky",
+		team: "blue",
+		score: 10,
+		items: ["tape", "backpack", "pen"]
+	},
+	{
+		username: "susy",
+		team: "red",
+		score: 55,
+		items: ["ball", "eraser", "pen"]
+	},
+	{
+		username: "tyson",
+		team: "green",
+		score: 1,
+		items: ["book", "pen"]
+	},
 
-let total = 0;
-array.forEach(num => {
-  total+= num;
-});
-
-console.log(total);
+];

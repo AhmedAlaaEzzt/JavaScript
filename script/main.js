@@ -1,8 +1,8 @@
-const array = [1, 2, 10, 16, 5, 3];
+const array = [1, 2, 3, 4];
 
-const numsGreaterThan5 = [];
+let total = 0;
 array.forEach(num => {
-  if(num > 5) numsGreaterThan5.push(num)
+  total+= num;
 });
 
-console.log(numsGreaterThan5);
+console.log(total);

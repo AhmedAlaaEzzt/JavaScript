@@ -20,3 +20,5 @@ var array2 = [
 ];
 
 let animals = ["cat", "elephant" ,"bee", "deer"];
+
+const dragons = ['Tim', 'Johnathan', 'Sandy', 'Sarah'];

@@ -26,3 +26,5 @@ const dragons = ['Tim', 'Johnathan', 'Sandy', 'Sarah'];
 const array3 = [1,[2,3],[4,5]];
 
 const array4 = [1,2,[3,4,[5]]];
+
+const greeting = [["Hello", "young", "grasshopper!"], ["you", "are"], ["learning", "fast!"]];

@@ -1,3 +1,3 @@
-import { projectId, projectName } from "./module1.js";
+import someData, { projectId } from "./module1.js";
 
-console.log(`${projectName} has id: ${projectId}`);
+console.log(`${someData} has id: ${projectId}`);

@@ -1,2 +1,3 @@
-export let projectId = 99;
-export let projectName = "BuildIt";
+let projectId = 99;
+let projectName = "BuildIt";
+export { projectId, projectName };

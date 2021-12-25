@@ -34,6 +34,13 @@ document.getElementById("todoBtn").addEventListener("click", addTodo);
 
 document.getElementById("goalBtn").addEventListener("click", addGoal);
 
+function createRemoveButton(onClick) {
+  const removeBtn = document.createElement("button");
+  removeBtn.innerHTML = "X";
+  removeBtn.addEventListener("click", onClick);
+  return removeBtn;
+}
+
 function addTodoToDOM(todo) {
   const node = document.createElement("li");
   const text = document.createTextNode(todo.name);
@@ -59,13 +66,6 @@ function addTodoToDOM(todo) {
   document.getElementById("todos").appendChild(node);
 }
 
-function createRemoveButton(onClick) {
-  const removeBtn = document.createElement("button");
-  removeBtn.innerHTML = "X";
-  removeBtn.addEventListener("click", onClick);
-  return removeBtn;
-}
-
 function addGoalToDOM(goal) {
   const node = document.createElement("li");
   const text = document.createTextNode(goal.name);
@@ -79,7 +79,6 @@ function addGoalToDOM(goal) {
 }
 
 function rerender() {
-
   document.getElementById("todos").innerHTML = "";
   document.getElementById("goals").innerHTML = "";
 

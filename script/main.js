@@ -24,6 +24,25 @@ store.subscribe(() => {
 });
 
 
+store.subscribe(() => {
+  
+  console.log("subscribe 2");
+  
+
+
+});
+
+store.subscribe(() => {
+  
+  console.log("subscribe 3");
+  
+
+
+});
+
+
+
+
 
 function addTodo() {
   const input = document.getElementById("todo");

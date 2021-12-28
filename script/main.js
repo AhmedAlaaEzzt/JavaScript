@@ -1,6 +1,30 @@
 import { generateId } from "./helpers.js";
-let todos = [];
-let goals = [];
+import createStore from "./my-store.js";
+import * as TodosAction from "./state-management/todos/todos.actions.js";
+import * as GoalsAction from "./state-management/goals/goals.actions.js";
+import rootReducer from "./state-management/root-reducer.js";
+
+
+
+
+
+const store = createStore(rootReducer);
+
+store.subscribe(() => {
+  const {todos , goals } = store.getState();
+  
+  console.log(store.getState());
+
+  document.getElementById("todos").innerHTML = "";
+  document.getElementById("goals").innerHTML = "";
+
+  goals.forEach((goal) => addGoalToDOM(goal));
+  todos.forEach((todo) => addTodoToDOM(todo));
+
+});
+
+
+
 function addTodo() {
   const input = document.getElementById("todo");
   const name = input.value;
@@ -11,9 +35,8 @@ function addTodo() {
     name,
     complete: false,
   };
-  todos.push(todo);
 
-  addTodoToDOM(todo);
+  store.dispatch(TodosAction.addTodoAction(todo));
 }
 
 function addGoal() {
@@ -25,9 +48,10 @@ function addGoal() {
     id: generateId(),
     name,
   };
+  store.dispatch(  GoalsAction.addGoalAction(goal))
 
-  goals.push(goal);
-  addGoalToDOM(goal);
+
+
 }
 
 document.getElementById("todoBtn").addEventListener("click", addTodo);
@@ -45,22 +69,14 @@ function addTodoToDOM(todo) {
   const node = document.createElement("li");
   const text = document.createTextNode(todo.name);
   const removeBtn = createRemoveButton(() => {
-    todos = todos.filter((_todo) => {
-      return _todo.id !== todo.id;
-    });
-    rerender();
+    store.dispatch(TodosAction.removeTodoAction(todo.id));
   });
   node.appendChild(text);
   node.appendChild(removeBtn);
   node.style.textDecoration = todo.complete ? "line-through" : "none";
 
   node.addEventListener("click", () => {
-    todos = todos.map((_todo) =>
-      _todo.id !== todo.id
-        ? _todo
-        : Object.assign({}, _todo, { complete: !_todo.complete })
-    );
-    rerender();
+    store.dispatch(TodosAction.toggleTodoAction(todo.id))
   });
 
   document.getElementById("todos").appendChild(node);
@@ -70,20 +86,14 @@ function addGoalToDOM(goal) {
   const node = document.createElement("li");
   const text = document.createTextNode(goal.name);
   const removeBtn = createRemoveButton(() => {
-    goals = goals.filter((_goal) => _goal.id !== goal.id);
-    rerender();
+    store.dispatch(GoalsAction.removeGoalAction(goal.id))
+
+   
+
   });
   node.appendChild(text);
   node.appendChild(removeBtn);
   document.getElementById("goals").appendChild(node);
 }
 
-function rerender() {
-  document.getElementById("todos").innerHTML = "";
-  document.getElementById("goals").innerHTML = "";
 
-  goals.forEach((goal) => addGoalToDOM(goal));
-  todos.forEach((todo) => {
-    addTodoToDOM(todo);
-  });
-}

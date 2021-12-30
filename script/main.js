@@ -1,5 +1,4 @@
 import { generateId } from "./helpers.js";
-//import createStore from "./my-store.js";
 import * as TodosAction from "./state-management/todos/todos.actions.js";
 import * as GoalsAction from "./state-management/goals/goals.actions.js";
 import rootReducer from "./state-management/root-reducer.js";

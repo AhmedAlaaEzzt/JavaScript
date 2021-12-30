@@ -2,12 +2,12 @@ import { generateId } from "./helpers.js";
 import * as TodosAction from "./state-management/todos/todos.actions.js";
 import * as GoalsAction from "./state-management/goals/goals.actions.js";
 import rootReducer from "./state-management/root-reducer.js";
+import { checker } from "./state-management/middlewares/checker.js";
 
 
 
 
-
-const store = Redux.createStore(rootReducer);
+const store = Redux.createStore(rootReducer,Redux.applyMiddleware(checker));
 
 store.subscribe(() => {
   const {todos , goals } = store.getState();

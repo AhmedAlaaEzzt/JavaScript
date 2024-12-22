@@ -1,3 +1,6 @@
-class Car {}
+console.log(divideNumbers(0, 0));
 
-let car = new Car();
+function divideNumbers(num1, num2) {
+  let result = num1 / num2;
+  return result;
+}
